@@ -11,13 +11,39 @@
    "interface":0,
    "esms":[
        {"esm": {
-           "esm_type": 2,
-           "esm_title":"Have you had a social interaction?",
+           "esm_type": 5,
+           "esm_title":"Since the last notification, have you had a social interaction?",
+	       "esm_quick_answers":["Yes","No"],
            "esm_instructions":"",
            "esm_submit":"Submit",
            "esm_expiration_threshold": 60,
            "esm_trigger": "esm_basic_test_1",
-           "esm_na": 0
+           "esm_na": 0,
+	   "esm_flows": [
+		   {"user_answer": "Yes",
+		    "next_esm": {
+			    "esm_type":3,
+			    "esm_title": "Have you felt any of the follwing?",
+			    "esm_checkboxes": ["left out",
+			    			"accepted",
+			    			"excluded", 
+			    			"bullied/picked on",
+			    			"treated poorly",
+			    			"treated well", 
+			    			"ostracized", 
+			    			"rejected",
+					    	"treated unfairly",
+					    	"included",
+					    	"ignored"],
+			    "esm_submit": "Next"
+		    		},
+		    {"user_answer": "No",
+		    "next_esm": {
+		   		"esm_type": "Have you felt any of the follwing?",
+		    		"esm_checkboxes": ["XXXX"]
+		    		"exm_submit": "Next"
+		   		}
+		   }]
            }
        },
        {"esm": {
